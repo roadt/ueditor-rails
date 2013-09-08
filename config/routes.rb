@@ -1,5 +1,11 @@
 Ueditor::Engine.routes.draw do 
-  resources :imagse, :attachments
+  resources :images do 
+      collection do 
+        post :upload
+        match :manage
+      end
+    end
+    resource :attachments
 end
 
 
